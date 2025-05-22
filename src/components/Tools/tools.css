@@ -1,0 +1,11 @@
+.tools {
+  timeline-scope: --entry0, --entry1, --entry2, --entry3, --entry4, --entry5, --entry6; --count: 7;
+  position: relative;
+  padding: clamp(4rem, 5.5555555556vw, 5vh) 0 0;
+  text-align: center;
+  color: var(--color-accent);
+}
+
+.tools .me svg {
+  width: min(50vw, 40rem);
+}

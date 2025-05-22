@@ -1,0 +1,146 @@
+
+.footer {
+  position: relative;
+  z-index: 1;
+  border-radius: 4rem 4rem 0 0;
+  padding: max(4rem, 13.8888888889vw) var(--padding) var(--padding);
+  view-transition-name: footer
+}
+
+.footer a {
+  transition: color .3s ease-out
+}
+
+.footer a:hover {
+  color: var(--color-accent)
+}
+
+.footer__top,
+.footer__middle,
+.footer__bottom,
+.footer__socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  align-items: last baseline
+}
+
+.footer__top dd+dt,
+.footer__middle dd+dt,
+.footer__bottom dd+dt,
+.footer__socials dd+dt {
+  margin-top: .5em
+}
+
+.footer__top p,
+.footer__middle p,
+.footer__bottom p,
+.footer__socials p {
+  line-height: 1.1
+}
+
+.footer__top p+p,
+.footer__middle p+p,
+.footer__bottom p+p,
+.footer__socials p+p {
+  margin-top: .25em
+}
+
+.footer .arrow {
+  display: inline-block;
+  margin-right: .3em
+}
+
+.footer__top a {
+  text-decoration: none;
+  color: var(--color-accent)
+}
+
+.footer .xxlarge-hero {
+  white-space: nowrap
+}
+
+.footer .right {
+  text-align: right;
+  max-width: 20.8333333333vw
+}
+
+@media only screen and (min-width: 0px)and (max-width: 1024px) {
+  .footer .right {
+    max-width: unset
+  }
+}
+
+.footer .right i {
+  display: block
+}
+
+@media only screen and (min-width: 0px)and (max-width: 1024px) {
+  .footer .right {
+    width: 100%
+  }
+}
+
+@media only screen and (min-width: 0px)and (max-width: 1024px) {
+
+  .footer__middle .right,
+  .footer__top .right {
+    text-align: left;
+    margin-top: 1em
+  }
+}
+
+@media only screen and (min-width: 0px)and (max-width: 1024px) {
+
+  .footer__middle,
+  .footer__contact {
+    margin-top: 1em
+  }
+}
+
+.footer__bottom {
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: var(--padding)
+}
+
+@media only screen and (min-width: 0px)and (max-width: 1024px) {
+  .footer__bottom {
+    margin-top: 2em
+  }
+}
+
+.footer__socials {
+  justify-content: flex-start
+}
+
+@media only screen and (min-width: 0px)and (max-width: 1024px) {
+  .footer__socials {
+    margin-top: 2em
+  }
+}
+
+.footer__socials ul {
+  list-style-type: "";
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0
+}
+
+@keyframes move {
+  50% {
+    transform: translateX(-4px)
+  }
+}
+
+@keyframes moveDown {
+  from {
+    transform: translateY(-13.8888888889vw)
+  }
+
+  to {
+    transform: translateY(0)
+  }
+}
