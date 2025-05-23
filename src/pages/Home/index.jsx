@@ -6,8 +6,8 @@ const Home = () => {
   return (
     <>
       <Intro />
-      {/* <Tools /> */}
       <Journey />
+      <Tools />
     </>
   )
 }

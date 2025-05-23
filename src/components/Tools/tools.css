@@ -6,24 +6,64 @@
   color: var(--color-accent);
 }
 
+.tools .me {
+  position: relative;
+  z-index: 1;
+}
+
 .tools .me svg {
   width: min(50vw, 40rem);
 }
 
+.tools-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.tools-orbit svg {
+  width: min(55vw, 45rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
 .tools-orbit .tool-item {
+  display: inline-flex;
+  margin: 0;
+  width: 100%;
+  height: 100%;
   opacity: 0;
   animation: fadeIn 1s ease-in-out forwards;
+  cursor: pointer;
 }
 
 .tools-orbit .tool-item img {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: max(2.5rem, 3.5vw);
   height: max(2.5rem, 3.5vw);
   object-fit: contain;
   transform-origin: 50% 50%;
   transform-box: fill-box;
+}
+
+.tools-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toolspath {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
 }
 
 @keyframes fadeIn {
