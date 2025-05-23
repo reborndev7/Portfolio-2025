@@ -114,11 +114,12 @@ const Intro = () => {
       ease: "power4.out",
       delay: 1,
     }),
-      ellipse.to(path[0], {
-        duration: 20,
-        morphSVG: path[0],
-        ease: "power4.out",
-      });
+
+    ellipse.to(path[0], {
+      duration: 20,
+      morphSVG: path[0],
+      ease: "power4.out",
+    });
 
     // Perspective animations
     if (titles && titleElements) {
