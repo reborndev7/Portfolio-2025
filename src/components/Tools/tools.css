@@ -9,3 +9,25 @@
 .tools .me svg {
   width: min(50vw, 40rem);
 }
+
+.tools-orbit .tool-item {
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.tools-orbit .tool-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max(2.5rem, 3.5vw);
+  height: max(2.5rem, 3.5vw);
+  object-fit: contain;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}

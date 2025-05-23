@@ -24,6 +24,14 @@
   font-display: swap
 }
 
+@font-face {
+  font-family: Nanum;
+  src: url(./assets/font/NanumPenScript-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --color-accent: #8082f8;
   --ease-in-sine: cubic-bezier(0.12, 0, 0.39, 0);
@@ -85,6 +93,10 @@ body,
 
 .inter {
   font-family: Inter, sans-serif
+}
+
+.pen {
+  font-family: Nanum, sans-serif;
 }
 
 h1,

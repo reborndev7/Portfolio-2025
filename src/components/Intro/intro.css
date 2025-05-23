@@ -101,8 +101,8 @@
 
 .homepage-header .motionpath {
   position: absolute;
-  top: -15%;
-  left: -25%;
+  top: -12%;
+  left: -30%;
   width: 200%;
   height: auto;
   transform: rotateX(35deg) rotateY(-10deg);
@@ -120,9 +120,9 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  --z: -10.4166666667vw;
+  --z: -8.166666667vw;
   transform: translate(-50%, -75%) translateZ(var(--z)) rotateX(75deg) rotateY(0deg);
-  width: 65.8333333333vw;
+  width: 69vw;
   height: auto;
   z-index: 1;
   stroke: var(--color-accent);

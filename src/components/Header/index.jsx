@@ -1,8 +1,21 @@
 import "./header.css";
+import { useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const location = useLocation();
+  const [isCopied, setIsCopied] = useState(false);
+  const email = "reborndev7@gmail.com";
+
+  const handleCopyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000); // Remove copied state after 2 seconds
+    } catch (err) {
+      console.error('Failed to copy email:', err);
+    }
+  };
 
   return (
     <header className="header">
@@ -11,8 +24,11 @@ const Header = () => {
           Dev
         </Link>
         <div className="header__email">
-          <button className="copy-email">
-            <span className="sr-only">Copy email</span>
+          <button
+            className={`copy-email ${isCopied ? 'is-copied' : ''}`}
+            onClick={handleCopyEmail}
+          >
+            <span className="sr-only">{isCopied ? 'Email copied!' : 'Copy email'}</span>
             <svg viewBox="0 0 716 543" xmlns="http://www.w3.org/2000/svg">
               <path
                 fillRule="evenodd"
@@ -21,7 +37,7 @@ const Header = () => {
               ></path>
             </svg>
           </button>
-          <a href="mailto:reborndev7@gmail.com">reborndev7@gmail.com</a>
+          <a href="mailto:reborndev7@gmail.com">{email}</a>
         </div>
       </div>
       <div className="header__inner">
