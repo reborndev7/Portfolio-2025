@@ -7,6 +7,7 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollToPlugin);
 
 const Header = () => {
+  const headerRef = useRef(null);
   const [isCopied, setIsCopied] = useState(false);
   const email = "reborndev7@gmail.com";
 
@@ -29,6 +30,17 @@ const Header = () => {
         duration: 1,
         ease: "power2.out",
       });
+    }
+
+    // Collapse the header
+    if (headerRef.current) {
+      headerRef.current.classList.remove("is-open");
+    }
+  };
+
+  const handleMenuClick = () => {
+    if (headerRef.current) {
+      headerRef.current.classList.toggle("is-open");
     }
   };
 
@@ -63,7 +75,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="header">
+    <header className="header" ref={headerRef}>
       <div className="header__left large-body caps font-bold">
         <Link to="/" className="header__logo vf">
           Dev
@@ -86,7 +98,7 @@ const Header = () => {
         </div>
       </div>
       <div className="header__inner">
-        <button className="header__trigger">
+        <button className="header__trigger" onClick={handleMenuClick}>
           <span className="sr-only">Menu</span>
           <span className="icon">
             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">

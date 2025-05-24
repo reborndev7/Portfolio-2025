@@ -149,8 +149,15 @@ body {
   position: relative;
   z-index: 2;
   min-height: 100vh;
-  margin-bottom: 500px;
+  margin-bottom: 400px;
   border-radius: 0 0 50px 50px;
+}
+
+@media screen and (max-width: 767px) {
+  .main {
+    margin-bottom: 300px;
+    border-radius: 0 0 30px 30px;
+  }
 }
 
 .background--dark {

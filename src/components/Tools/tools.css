@@ -12,7 +12,8 @@
 }
 
 .tools .me svg {
-  width: min(50vw, 40rem);
+  width: min(60vw, 40rem);
+  pointer-events: none;
 }
 
 .tools-container {
@@ -21,7 +22,7 @@
 }
 
 .tools-orbit svg {
-  width: min(58vw, 48rem);
+  width: min(68vw, 48rem);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -45,6 +46,18 @@
   object-fit: contain;
   transform-origin: 50% 50%;
   transform-box: fill-box;
+}
+
+.tools-orbit .tool-item:hover img {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 767px) {
+  .tools-orbit .tool-item img {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .tools-wrap {

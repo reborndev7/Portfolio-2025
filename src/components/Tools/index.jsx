@@ -26,7 +26,6 @@ const Tools = () => {
         transformOrigin: "50% 50%",
       });
       const totalTools = tools.length;
-      const animations = [];
 
       tools.forEach((tool, index) => {
         const animation = gsap.to(tool, {
@@ -41,28 +40,9 @@ const Tools = () => {
           repeat: -1,
           ease: "linear",
         });
-        animations.push(animation);
-
-        tool.addEventListener("mouseenter", () => {
-          animation.pause();
-        });
-
-        tool.addEventListener("mouseleave", () => {
-          animation.play();
-        });
       });
 
-      // Cleanup event listeners on component unmount
-      return () => {
-        tools.forEach((tool, index) => {
-          tool.removeEventListener("mouseenter", () => {
-            animations[index].pause();
-          });
-          tool.removeEventListener("mouseleave", () => {
-            animations[index].play();
-          });
-        });
-      };
+
     }
   }, []);
 

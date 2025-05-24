@@ -5,7 +5,11 @@
   z-index: 1;
   bottom: 0;
   left: 0;
-  padding: max(4rem, 13.8888888889vw) var(--padding) var(--padding);
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--padding) var(--padding);
   view-transition-name: footer;
   color: #fff;
   background-color: black;

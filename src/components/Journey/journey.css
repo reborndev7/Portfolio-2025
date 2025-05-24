@@ -1,8 +1,14 @@
 .journey {
   position: relative;
-  padding: clamp(5rem, 6vw, 15vh) 0;
+  padding: clamp(2.5rem, 6vw, 15vh) 0;
   text-align: center;
   color: var(--color-accent);
+}
+
+@media screen and (max-width: 767px) {
+  .journey-container svg {
+    display: none;
+  }
 }
 
 .timeline-block {
@@ -12,10 +18,27 @@
   justify-content: space-evenly;
   align-items: center;
   margin: -5rem 0;
+  padding: 0 var(--padding);
 }
 
 .timeline-block:nth-of-type(even) {
   flex-direction: row-reverse;
+}
+
+@media screen and (max-width: 1080px) {
+  .timeline-block {
+    flex-direction: column;
+    margin: 2rem 0 4rem;
+    gap: 30px;
+  }
+
+  .timeline-block:nth-of-type(even) {
+    flex-direction: column;
+  }
+
+  .timeline-block:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .timeline-title {
@@ -36,6 +59,13 @@
 .timeline-img {
   width: 100%;
   max-width: 30rem;
+}
+
+@media screen and (max-width: 767px) {
+  .timeline-img {
+    max-width: 90%;
+    margin-bottom: 2rem;
+  }
 }
 
 .timeline-img figure {
@@ -68,6 +98,12 @@
   background: -webkit-linear-gradient(#ff006e, #242acf);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 767px) {
+  .timeline-content {
+    font-size: 1.25rem;
+  }
 }
 
 .timeline-content p::selection,
