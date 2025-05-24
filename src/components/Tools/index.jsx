@@ -67,7 +67,7 @@ const Tools = () => {
   }, []);
 
   return (
-    <section className="tools">
+    <section className="tools" id="tools">
       <section className="scroll-heading">
         <h2 className="js-scroll-heading medium-heading caps">
           <span>Tools</span>

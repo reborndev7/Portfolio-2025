@@ -145,13 +145,11 @@ const Projects = () => {
   }, []);
 
   return (
-    <section ref={selectedWorkRef} className="selected-work">
+    <section ref={selectedWorkRef} className="selected-work" id="projects">
       <section className="scroll-heading">
         <h2 className="js-scroll-heading medium-heading caps">
           <span>
-            Selected
-            <br />
-            work
+            Projects
           </span>
         </h2>
       </section>
@@ -159,7 +157,7 @@ const Projects = () => {
         <article
           className="work-thumb"
           style={{
-            "animation-timeline": "--entry0",
+            "animationTimeline": "--entry0",
             "--color-accent": "#d80a0a",
             "--custom-rotate": "-4deg",
             "--z-index": 0,
@@ -198,7 +196,7 @@ const Projects = () => {
         <article
           className="work-thumb"
           style={{
-            "animation-timeline": "--entry1",
+            "animationTimeline": "--entry1",
             "--color-accent": "#01463c",
             "--custom-rotate": "4deg",
             "--z-index": 1,
@@ -240,8 +238,8 @@ const Projects = () => {
         </article>
       </div>
       <div className="scroll-ticks">
-        <div className="scroll-tick" style={{ "view-timeline": "--entry0 y" }}></div>
-        <div className="scroll-tick" style={{ "view-timeline": "--entry1 y" }}></div>
+        <div className="scroll-tick" style={{ "viewTimeline": "--entry0 y" }}></div>
+        <div className="scroll-tick" style={{ "viewTimeline": "--entry1 y" }}></div>
       </div>
     </section>
   );

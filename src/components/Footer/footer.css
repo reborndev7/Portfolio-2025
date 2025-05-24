@@ -1,10 +1,14 @@
 
 .footer {
-  position: relative;
+  position: fixed;
+  width: 100%;
   z-index: 1;
-  border-radius: 4rem 4rem 0 0;
+  bottom: 0;
+  left: 0;
   padding: max(4rem, 13.8888888889vw) var(--padding) var(--padding);
-  view-transition-name: footer
+  view-transition-name: footer;
+  color: #fff;
+  background-color: black;
 }
 
 .footer a {

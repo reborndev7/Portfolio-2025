@@ -1,9 +1,12 @@
 import "./header.css";
-import { useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useRef, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const Header = () => {
-  const location = useLocation();
   const [isCopied, setIsCopied] = useState(false);
   const email = "reborndev7@gmail.com";
 
@@ -16,6 +19,48 @@ const Header = () => {
       console.error('Failed to copy email:', err);
     }
   };
+
+  const handleLinkClick = (e, targetId) => {
+    e.preventDefault();
+    const targetSection = document.querySelector(targetId);
+    if (targetSection) {
+      gsap.to(window, {
+        scrollTo: { y: targetSection },
+        duration: 1,
+        ease: "power2.out",
+      });
+    }
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      const navLinks = document.querySelectorAll(".header__link");
+
+      let currentSection = "";
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        if (window.scrollY >= sectionTop - sectionHeight / 3) {
+          currentSection = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === `#${currentSection}`) {
+          link.classList.add("active");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <header className="header">
@@ -61,15 +106,32 @@ const Header = () => {
         </button>
         <nav className="header__nav nav--top" aria-label="Top navigation">
           <ul className="header__list">
-            <li className={`header__item large-body caps font-bold ${location.pathname === '/about' ? 'is-active' : ''}`}>
-              <Link className="header__link" to="/about">
-                About
-              </Link>
+            <li className="header__item large-body caps font-bold">
+              <a
+                className="header__link"
+                href="#my-journey"
+                onClick={(e) => handleLinkClick(e, "#my-journey")}
+              >
+                My Journey
+              </a>
             </li>
-            <li className={`header__item large-body caps font-bold ${location.pathname === '/contact' ? 'is-active' : ''}`}>
-              <Link className="header__link" to="/contact">
-                Contact
-              </Link>
+            <li className="header__item large-body caps font-bold">
+              <a
+                className="header__link"
+                href="#projects"
+                onClick={(e) => handleLinkClick(e, "#projects")}
+              >
+                Projects
+              </a>
+            </li>
+            <li className="header__item large-body caps font-bold">
+              <a
+                className="header__link"
+                href="#tools"
+                onClick={(e) => handleLinkClick(e, "#tools")}
+              >
+                Tools
+              </a>
             </li>
             <li aria-hidden="true" className="mobile-only">
               <hr />

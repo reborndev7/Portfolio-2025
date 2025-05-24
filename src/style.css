@@ -144,6 +144,15 @@ body {
   -moz-osx-font-smoothing: grayscale
 }
 
+.main {
+  background-color: var(--background);
+  position: relative;
+  z-index: 2;
+  min-height: 100vh;
+  margin-bottom: 500px;
+  border-radius: 0 0 50px 50px;
+}
+
 .background--dark {
   background: #111
 }

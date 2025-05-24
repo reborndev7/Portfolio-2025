@@ -5,12 +5,12 @@ import Tools from "../../components/Tools";
 
 const Home = () => {
   return (
-    <>
+    <div className="main" id="main">
       <Intro />
       <Journey />
       <Projects />
       <Tools />
-    </>
+    </div>
   )
 }
 

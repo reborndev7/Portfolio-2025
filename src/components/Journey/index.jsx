@@ -145,7 +145,7 @@ const Journey = () => {
   }, []);
 
   return (
-    <section className="journey">
+    <section className="journey" id="my-journey">
       <section className="scroll-heading">
         <h2 className="js-scroll-heading medium-heading caps">
           <span>
