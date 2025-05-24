@@ -1,5 +1,6 @@
 import Intro from "../../components/Intro";
 import Journey from "../../components/Journey";
+import Projects from "../../components/Projects";
 import Tools from "../../components/Tools";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
     <>
       <Intro />
       <Journey />
+      <Projects />
       <Tools />
     </>
   )

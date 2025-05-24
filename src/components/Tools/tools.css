@@ -21,7 +21,7 @@
 }
 
 .tools-orbit svg {
-  width: min(55vw, 45rem);
+  width: min(58vw, 48rem);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -40,8 +40,8 @@
 }
 
 .tools-orbit .tool-item img {
-  width: max(2.5rem, 3.5vw);
-  height: max(2.5rem, 3.5vw);
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   transform-origin: 50% 50%;
   transform-box: fill-box;

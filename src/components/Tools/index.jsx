@@ -29,7 +29,6 @@ const Tools = () => {
       const animations = [];
 
       tools.forEach((tool, index) => {
-        console.log(tool);
         const animation = gsap.to(tool, {
           motionPath: {
             path: ".toolspath path",
@@ -45,12 +44,10 @@ const Tools = () => {
         animations.push(animation);
 
         tool.addEventListener("mouseenter", () => {
-          console.log("Mouse enter:", index);
           animation.pause();
         });
 
         tool.addEventListener("mouseleave", () => {
-          console.log("Mouse leave:", index);
           animation.play();
         });
       });
